@@ -1,0 +1,138 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Reports\AdmisionTicket.repx" />
+    <None Remove="Reports\Appointment.repx" />
+    <None Remove="Reports\Bill.repx" />
+    <None Remove="Reports\Header.repx" />
+    <None Remove="Reports\RequisaSolicitud.repx" />
+    <None Remove="Reports\xrBalanceByClient.repx" />
+    <None Remove="Reports\xrExamenes.repx" />
+    <None Remove="Reports\xrExamenesTicket.repx" />
+    <None Remove="Reports\xrHemodialisis.repx" />
+    <None Remove="Reports\xrMovimientos.repx" />
+    <None Remove="Reports\xrRequisaResponse.repx" />
+    <None Remove="Reports\xrSaldoInicial.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\AdmisionTicket.repx" />
+    <EmbeddedResource Include="Reports\Appointment.repx" />
+    <EmbeddedResource Include="Reports\Bill.repx" />
+    <EmbeddedResource Include="Reports\Header.repx" />
+    <EmbeddedResource Include="Reports\RequisaSolicitud.repx" />
+    <EmbeddedResource Include="Reports\xrBalanceByClient.repx" />
+    <EmbeddedResource Include="Reports\xrExamenesTicket.repx" />
+    <EmbeddedResource Include="Reports\xrExamenes.repx" />
+    <EmbeddedResource Include="Reports\xrHemodialisis.repx" />
+    <EmbeddedResource Include="Reports\xrMovimientos.repx" />
+    <EmbeddedResource Include="Reports\xrRequisaResponse.repx" />
+    <EmbeddedResource Include="Reports\xrSaldoInicial.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Reporting.Core" Version="22.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\AdmisionTicket.cs">
+      <DependentUpon>AdmisionTicket.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\AdmisionTicket.Designer.cs">
+      <DependentUpon>AdmisionTicket.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Appointment.cs">
+      <DependentUpon>Appointment.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Appointment.Designer.cs">
+      <DependentUpon>Appointment.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Bill.cs">
+      <DependentUpon>Bill.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Bill.Designer.cs">
+      <DependentUpon>Bill.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Header.cs">
+      <DependentUpon>Header.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Header.Designer.cs">
+      <DependentUpon>Header.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\RequisaSolicitud.cs">
+      <DependentUpon>RequisaSolicitud.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\RequisaSolicitud.Designer.cs">
+      <DependentUpon>RequisaSolicitud.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrBalanceByClient.cs">
+      <DependentUpon>xrBalanceByClient.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrBalanceByClient.Designer.cs">
+      <DependentUpon>xrBalanceByClient.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrExamenes.cs">
+      <DependentUpon>xrExamenes.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrExamenes.Designer.cs">
+      <DependentUpon>xrExamenes.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrExamenesTicket.cs">
+      <DependentUpon>xrExamenesTicket.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrExamenesTicket.Designer.cs">
+      <DependentUpon>xrExamenesTicket.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrHemodialisis.cs">
+      <DependentUpon>xrHemodialisis.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrHemodialisis.Designer.cs">
+      <DependentUpon>xrHemodialisis.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrMovimientos.cs">
+      <DependentUpon>xrMovimientos.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrMovimientos.Designer.cs">
+      <DependentUpon>xrMovimientos.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrRequisaResponse.cs">
+      <DependentUpon>xrRequisaResponse.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrRequisaResponse.Designer.cs">
+      <DependentUpon>xrRequisaResponse.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrSaldoInicial.cs">
+      <DependentUpon>xrSaldoInicial.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\xrSaldoInicial.Designer.cs">
+      <DependentUpon>xrSaldoInicial.repx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

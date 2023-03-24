@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="19.1.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="xrBalanceByClient" Margins="100, 100, 339, 100" PageWidth="850" PageHeight="1100" Version="19.1" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Parameters>
+    <Item1 Ref="3" Description="Parameter1" Name="Anulado" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="4" ControlType="TopMarginBand" Name="TopMargin" HeightF="338.541656">
+      <Controls>
+        <Item1 Ref="5" ControlType="XRLabel" Name="label18" Multiline="true" Text="label18" SizeF="403.694519,23" LocationFloat="156.0833, 192.000046" Font="Arial, 12pt" Padding="2,2,0,0,96">
+          <ExpressionBindings>
+            <Item1 Ref="6" Expression="[FirstName]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="7" UseFont="false" />
+        </Item1>
+        <Item2 Ref="8" ControlType="XRLine" Name="line2" LineStyle="Dash" SizeF="650,9.999996" LocationFloat="0, 318.541656" ForeColor="Silver">
+          <StylePriority Ref="9" UseForeColor="false" />
+        </Item2>
+        <Item3 Ref="10" ControlType="XRLabel" Name="label23" TextFormatString="{0:d}" Multiline="true" Text="label23" SizeF="219.791672,23" LocationFloat="156.0833, 215.000031" Font="Arial, 12pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="11" Expression="[CreateAt]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="12" UseFont="false" />
+        </Item3>
+        <Item4 Ref="13" ControlType="XRLabel" Name="label22" Multiline="true" Text="label22" SizeF="403.125031,23" LocationFloat="156.6528, 239.194366" Font="Arial, 12pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="14" Expression="[TypeCustomer]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="15" UseFont="false" />
+        </Item4>
+        <Item5 Ref="16" ControlType="XRLabel" Name="label21" Multiline="true" Text="label21" SizeF="403.125031,24.1943054" LocationFloat="156.6528, 263.3887" Font="Arial, 12pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="17" Expression="[ContractType]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="18" UseFont="false" />
+        </Item5>
+        <Item6 Ref="19" ControlType="XRLabel" Name="label5" Multiline="true" Text="Tipo:" TextAlignment="TopRight" SizeF="117.875,24.1943359" LocationFloat="20.9028015, 263.388672" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="20" UseFont="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="21" ControlType="XRLabel" Name="label4" Multiline="true" Text="Relacion:" TextAlignment="TopRight" SizeF="117.875,24.1943359" LocationFloat="20.9028015, 239.194336" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="22" UseFont="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="23" ControlType="XRLabel" Name="label3" Multiline="true" Text="Ingreso:&#xD;&#xA;" TextAlignment="TopRight" SizeF="117.875,24.1943359" LocationFloat="20.9028015, 215" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="24" UseFont="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="25" ControlType="XRLabel" Name="label2" Text="Paciente:" TextAlignment="TopRight" SizeF="117.875,24.1943359" LocationFloat="20.9028015, 190.805664" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="26" UseFont="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="27" ControlType="XRLabel" Name="label1" Text="ESTADO DE CUENTA" TextAlignment="TopCenter" SizeF="221.000015,24.194334" LocationFloat="207.124969, 144.500351" Font="Arial, 14pt, style=Bold">
+          <StylePriority Ref="28" UseFont="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="29" ControlType="XRLabel" Name="label20" Text="Tel.:2341-2493 / 2340-2040 RUC:J0210000149033" TextAlignment="TopCenter" SizeF="270.078766,17.9443359" LocationFloat="308.4629, 72.0556641" Font="Arial, 8pt">
+          <StylePriority Ref="30" UseFont="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="31" ControlType="XRLabel" Name="label19" Text="Antiguo Banic 2 1 2c al Sur, Chinandega" TextAlignment="TopRight" SizeF="269.6851,17.9443359" LocationFloat="38.7777977, 72.0556641" Font="Arial, 9pt">
+          <StylePriority Ref="32" UseFont="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="33" ControlType="XRLabel" Name="label16" Text="FLOR DE SACUANJOCHE" TextAlignment="TopCenter" SizeF="306.4167,24.1943283" LocationFloat="156.0833, 47.8613358" Font="Arial, 14pt, style=Bold">
+          <StylePriority Ref="34" UseFont="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="35" ControlType="XRLabel" Name="label15" Text="CLINICA" TextAlignment="TopCenter" SizeF="221.000015,24.194334" LocationFloat="207.124969, 23.6670017" Font="Arial, 14pt, style=Bold">
+          <StylePriority Ref="36" UseFont="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="37" ControlType="XRLabel" Name="label26" Multiline="true" Angle="45" Text="label26" SizeF="148.875061,139.319366" LocationFloat="266.749939, 179.22226" Font="Arial, 24pt, style=Bold, charSet=0" ForeColor="OrangeRed" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="38" Expression="?Anulado" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="39" UseFont="false" UseForeColor="false" />
+        </Item15>
+      </Controls>
+    </Item1>
+    <Item2 Ref="40" ControlType="BottomMarginBand" Name="BottomMargin">
+      <Controls>
+        <Item1 Ref="41" ControlType="XRPageInfo" Name="pageInfo2" TextFormatString="Página {0} de {1}" TextAlignment="TopLeft" SizeF="138.7778,23" LocationFloat="0, 0">
+          <StylePriority Ref="42" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="43" ControlType="XRPageInfo" Name="pageInfo1" PageInfo="DateTime" TextFormatString="{0:d' de 'MMMM' de 'yyyy H:mm:ss}" TextAlignment="TopRight" SizeF="279.527618,23.0000057" LocationFloat="370.472351, 0" ForeColor="Gray" Borders="None">
+          <StylePriority Ref="44" UseForeColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+      </Controls>
+    </Item2>
+    <Item3 Ref="45" ControlType="DetailBand" Name="Detail" HeightF="27.083334">
+      <Controls>
+        <Item1 Ref="46" ControlType="XRLabel" Name="label25" Multiline="true" Text="label25" SizeF="314.43045,23" LocationFloat="20.902792, 0" Font="Arial, 11pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="47" Expression="[ServiceName]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="48" UseFont="false" />
+        </Item1>
+        <Item2 Ref="49" ControlType="XRLabel" Name="label13" TextFormatString="{0:#,#.00}" Multiline="true" Text="label13" TextAlignment="TopRight" SizeF="131.416687,23" LocationFloat="508.5833, 0" Font="Arial, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="50" Expression="[SubTotal]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="51" UseFont="false" />
+        </Item2>
+        <Item3 Ref="52" ControlType="XRLabel" Name="label12" TextFormatString="{0:#,#.00}" Multiline="true" Text="label12" TextAlignment="TopRight" SizeF="105.375031,23" LocationFloat="403.208282, 0" Font="Arial, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="53" Expression="[Price]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="54" UseFont="false" />
+        </Item3>
+        <Item4 Ref="55" ControlType="XRLabel" Name="label11" Multiline="true" Text="label11" TextAlignment="TopRight" SizeF="67.87503,23" LocationFloat="335.333252, 0" Font="Arial, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="56" Expression="[Quantity]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="57" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+      </Controls>
+    </Item3>
+    <Item4 Ref="58" ControlType="GroupHeaderBand" Name="GroupHeader1" HeightF="56.25">
+      <GroupFields>
+        <Item1 Ref="59" FieldName="Area" />
+      </GroupFields>
+      <Controls>
+        <Item1 Ref="60" ControlType="XRLabel" Name="label24" Multiline="true" Text="Precio" TextAlignment="TopRight" SizeF="105.375031,24.1943359" LocationFloat="403.208282, 32.0556641" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="61" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="62" ControlType="XRLabel" Name="label8" Multiline="true" Text="Cant" TextAlignment="TopRight" SizeF="60.583374,24.1943359" LocationFloat="342.6249, 32.0556641" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="63" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="64" ControlType="XRLabel" Name="label10" Multiline="true" Text="Total" TextAlignment="TopRight" SizeF="131.416687,24.1943359" LocationFloat="508.5833, 32.0556641" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="65" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="66" ControlType="XRLabel" Name="label9" Multiline="true" Text="Servicio" TextAlignment="TopLeft" SizeF="295.680481,24.1943359" LocationFloat="20.902792, 32.0556641" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="67" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="68" ControlType="XRLabel" Name="label7" Multiline="true" Text="label7" SizeF="427.097168,23" LocationFloat="170.0278, 2.38863635" Font="Arial, 12pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="69" Expression="[Area]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="70" UseFont="false" />
+        </Item5>
+        <Item6 Ref="71" ControlType="XRLabel" Name="label6" Multiline="true" Text="Area Hospitalaria:" TextAlignment="TopLeft" SizeF="149.125015,24.1943359" LocationFloat="20.902792, 1.19431818" Font="Arial, 12pt, style=Bold">
+          <StylePriority Ref="72" UseFont="false" UseTextAlignment="false" />
+        </Item6>
+      </Controls>
+    </Item4>
+    <Item5 Ref="73" ControlType="ReportFooterBand" Name="ReportFooter" HeightF="76.0416641">
+      <Controls>
+        <Item1 Ref="74" ControlType="XRLine" Name="line1" LineStyle="Dash" SizeF="650,9.999996" LocationFloat="0, 39.54169" ForeColor="Silver">
+          <StylePriority Ref="75" UseForeColor="false" />
+        </Item1>
+        <Item2 Ref="76" ControlType="XRLabel" Name="label17" TextFormatString="{0:#,#.00}" Multiline="true" Text="Total" TextAlignment="TopRight" SizeF="131.416687,24.1943359" LocationFloat="508.5833, 0" Font="Arial, 14pt, style=Bold">
+          <Summary Ref="77" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="78" Expression="sumSum([SubTotal])" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="79" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="80" ControlType="XRLabel" Name="label14" Multiline="true" Text="Total" TextAlignment="TopRight" SizeF="131.416687,24.1943359" LocationFloat="377.166626, 0" Font="Arial, 14pt, style=Bold">
+          <StylePriority Ref="81" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item5>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v19.1" Name="objectDataSource1" Base64="PE9iamVjdERhdGFTb3VyY2UgTmFtZT0ib2JqZWN0RGF0YVNvdXJjZTEiPjxEYXRhU291cmNlIFR5cGU9IlJlcG9ydHNBUEkuRGJNb2RlbHMudndCaWxsRmluaXNoZWRCeUNsaWVudCwgUmVwb3J0c0FQSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwiIC8+PC9PYmplY3REYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

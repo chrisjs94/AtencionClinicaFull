@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtencionClinica", "AtencionClinica\AtencionClinica.csproj", "{C5E813B1-1178-4EB8-8BFA-D732F56562BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportsAPI", "ReportsAPI\ReportsAPI.csproj", "{54B6D595-79A6-4D50-B220-75AEFD30ABD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5E813B1-1178-4EB8-8BFA-D732F56562BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E813B1-1178-4EB8-8BFA-D732F56562BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E813B1-1178-4EB8-8BFA-D732F56562BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E813B1-1178-4EB8-8BFA-D732F56562BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B6D595-79A6-4D50-B220-75AEFD30ABD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B6D595-79A6-4D50-B220-75AEFD30ABD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B6D595-79A6-4D50-B220-75AEFD30ABD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B6D595-79A6-4D50-B220-75AEFD30ABD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F77E5B7D-A657-4F6F-ACC1-F99B77B4A027}
+	EndGlobalSection
+EndGlobal

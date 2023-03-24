@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext 'Data Source=localhost;Initial Catalog=db_a73688_florsacuanjoche;Trusted_Connection=True;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbModels -Context ClinicaContext
