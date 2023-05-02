@@ -162,11 +162,9 @@ namespace AtencionClinica.Controllers
         [Route("api/followsprivate/{followId}/getWorkPreOrders")]
         public IActionResult PostWithProduct(int followId)
         {
-
             var result = _db.PrivateWorkPreOrders.Include(x => x.PrivateWorkPreOrderDetails)
             .FirstOrDefault(x => x.FollowsPrivateId == followId && !x.Used);
             return Json(result);
-
         }
 
         [HttpPost("api/followsprivate/post/withservice/Admission/{billId}/areaTarget/{areaTargetId}")]
@@ -197,15 +195,20 @@ namespace AtencionClinica.Controllers
             follow.CreateBy = user.Username;
             follow.PrivateSendTests.Add(sendTest);
 
+            _db.FollowsPrivates.Add(follow);
+            _db.SaveChanges();
+
             var serviceTest = new PrivateServiceTest
             {
                 SendTest = sendTest,
                 Date = UserHelpers.GetTimeInfo(),
                 CreateAt = UserHelpers.GetTimeInfo(),
-                CreateBy = user.Username
-                ,
+                CreateBy = user.Username,
                 DoctorId = sendTest.DoctorId,
+                FollowId = follow.Id
             };
+            _db.PrivateServiceTests.Add(serviceTest);
+            _db.SaveChanges();
 
             foreach (var item in sendTest.PrivateSendTestDetails)
             {
@@ -213,24 +216,29 @@ namespace AtencionClinica.Controllers
 
                 if (service.IsCultive)//Cultivo
                 {
-                    serviceTest.PrivateServiceTestCultives.Add(new PrivateServiceTestCultive
+                    _db.PrivateServiceTestCultives.Add(new PrivateServiceTestCultive
                     {
                         ServiceTest = serviceTest,
                         ServiceId = item.Serviceid,
-                        Name = service.Name
+                        Name = service.Name,
+                        ServiceTestId = serviceTest.Id
                     });
+                    _db.SaveChanges();
                 }
                 else if (item.Serviceid == 8)//BAAR
                 {
                     for (int i = 1; i <= 3; i++)
                     {
-                        serviceTest.PrivateServiceTestBaarDetails.Add(new PrivateServiceTestBaarDetail
+                        _db.PrivateServiceTestBaarDetails.Add(new PrivateServiceTestBaarDetail
                         {
                             ServiceTest = serviceTest,
                             ServiceId = item.Serviceid,
-                            TestNumber = i
+                            TestNumber = i,
+                            ServiceTestId = serviceTest.Id
                         });
                     }
+
+                    _db.SaveChanges();
                 }
                 else
                 {
@@ -238,29 +246,23 @@ namespace AtencionClinica.Controllers
 
                     foreach (var item2 in serviceDetails)
                     {
-                        serviceTest.PrivateServiceTestDetails.Add(new PrivateServiceTestDetail
+                        _db.PrivateServiceTestDetails.Add(new PrivateServiceTestDetail
                         {
                             ServiceTest = serviceTest,
                             ServiceId = item.Serviceid,
                             ServiceDetailId = item2.Id,
-
                             Name = item2.Name,
                             Um = item2.Um,
                             Reference = item2.Reference,
-
                             Result = "",
                             ResultJson = "",
+                            ServiceTestId = serviceTest.Id
                         });
                     }
+
+                    _db.SaveChanges();
                 }
             }
-
-            follow.PrivateServiceTests.Add(serviceTest);
-
-            _db.FollowsPrivates.Add(follow);
-
-
-            _db.SaveChanges();
 
             return Json(follow);
 

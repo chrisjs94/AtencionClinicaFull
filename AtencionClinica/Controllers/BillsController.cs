@@ -56,19 +56,20 @@ namespace AtencionClinica.Controllers
                 bills = bills.Where(x => x.CreateAt > createAt && x.CreateAt < createAt.AddDays(1));
             }
 
-            if(values.ContainsKey("isCredit"))
+            if (values.ContainsKey("isCredit"))
             {
                 var isCredit = Convert.ToBoolean(values["isCredit"]);
-                bills = bills.Where(x => (x.IsCredit??false) == isCredit);
+                bills = bills.Where(x => (x.IsCredit ?? false) == isCredit);
             }
 
             var totalCount = bills.Count();
 
             if (values.ContainsKey("requireTotalCount"))
             {
-               var requireTotalCount = Convert.ToBoolean(values["requireTotalCount"]);
-                if (requireTotalCount){
-                        bills = bills.Skip(skip).Take(take);                
+                var requireTotalCount = Convert.ToBoolean(values["requireTotalCount"]);
+                if (requireTotalCount)
+                {
+                    bills = bills.Skip(skip).Take(take);
                 }
             }
 
@@ -83,7 +84,7 @@ namespace AtencionClinica.Controllers
                 x.Active,
                 x.Total,
                 x.CurrencyId,
-                IsCredit = x.IsCredit?? false
+                IsCredit = x.IsCredit ?? false
             });
 
             return Json(new
@@ -108,7 +109,6 @@ namespace AtencionClinica.Controllers
             bill.CreateAt = UserHelpers.GetTimeInfo();
             bill.CreateBy = user.Username;
 
-
             if (bill.PrivateCustomerId == (int)PrivateCustomers.ClienteContado)
             {
                 var cliente = _db.PrivateCustomers.FirstOrDefault(x => x.Id == (int)PrivateCustomers.ClienteContado);
@@ -122,7 +122,6 @@ namespace AtencionClinica.Controllers
             {
                 try
                 {
-
                     var result = _service.Create(bill);
 
                     if (!result.IsValid)
@@ -137,9 +136,15 @@ namespace AtencionClinica.Controllers
 
                     if (bill.PrivateCustomerId != (int)PrivateCustomers.ClienteContado)
                     {
-
-
                         var areaDoctorId = bill.AreaDoctorId;
+
+                        var sendTest = new PrivateSendTest()
+                        {
+                            Date = DateTime.Now,
+                            DoctorId = areaDoctorId,
+                            CreateAt = DateTime.Now,
+                            CreateBy = user.Username
+                        };
 
                         var follow = new FollowsPrivate
                         {
@@ -151,42 +156,101 @@ namespace AtencionClinica.Controllers
                             CreateBy = user.Username
                         };
 
+                        PrivateServiceTest serviceTest = new PrivateServiceTest()
+                        {
+                            SendTest = sendTest,
+                            DoctorId = sendTest.DoctorId,
+                            CreateAt = UserHelpers.GetTimeInfo(),
+                            CreateBy = user.Username,
+                            Date = UserHelpers.GetTimeInfo()
+                        };
+                        follow.PrivateServiceTests.Add(serviceTest);
+
                         if (bill.BillDetails.Any(x => x.ServiceId != null))
                         {
-
                             var work = new PrivateWorkOrder
                             {
-
                                 Date = UserHelpers.GetTimeInfo(),
                                 CreateAt = UserHelpers.GetTimeInfo(),
                                 CreateBy = user.Username,
                                 DoctorId = areaDoctorId,
                                 Active = true,
-                                Reference = bill.Id.ToString()
-
+                                Reference = bill.Id.ToString(),
+                                FollowsPrivateId = follow.Id
                             };
+
+                            follow.PrivateWorkOrders.Add(work);
 
                             foreach (var item in bill.BillDetails)
                             {
+                                var service = _db.Services.FirstOrDefault(x => x.Id == item.ServiceId);
+                                if (service.IsCultive)
+                                {
+                                    serviceTest.PrivateServiceTestCultives.Add(new PrivateServiceTestCultive()
+                                    {
+                                        ServiceTest = serviceTest,
+                                        ServiceId = (int)item.ServiceId,
+                                        Name = service.Name,
+                                        ServiceTestId = serviceTest.Id
+                                    });
+                                }
+                                else if (item.ServiceId == 8) //BAAR
+                                {
+                                    for (int i =1; i <= 3; i++)
+                                    {
+                                        serviceTest.PrivateServiceTestBaarDetails.Add(new PrivateServiceTestBaarDetail()
+                                        {
+                                            ServiceTest = serviceTest,
+                                            ServiceId = (int)item.ServiceId,
+                                            TestNumber = i,
+                                            ServiceTestId = serviceTest.Id
+                                        });
+                                    }
+                                }
+                                else
+                                {
+                                    var serviceDetails = _db.ServiceDetails.Where(x => x.ServiceId == item.ServiceId);
+
+                                    if (!serviceDetails.Any())
+                                        return BadRequest("El servicio no ha podido ser encontrado.");
+
+                                    foreach (var item2 in serviceDetails)
+                                    {
+                                        serviceTest.PrivateServiceTestDetails.Add(new PrivateServiceTestDetail()
+                                        {
+                                            ServiceTest = serviceTest,
+                                            ServiceId = (int)item.ServiceId,
+                                            ServiceDetailId = item2.Id,
+                                            Name = item2.Name,
+                                            Um = item2.Um,
+                                            Reference = item2.Reference,
+                                            Result = "",
+                                            ResultJson = "",
+                                            ServiceTestId = serviceTest.Id
+                                        });
+                                    }
+                                }
+
+                                sendTest.PrivateSendTestDetails.Add(new PrivateSendTestDetail()
+                                {
+                                    Serviceid = (int)item.ServiceId
+                                });
+
                                 work.PrivateWorkOrderDetails.Add(new PrivateWorkOrderDetail
                                 {
-
                                     IsService = true,
                                     ServiceId = item.ServiceId,
                                     Quantity = Convert.ToDouble(item.Quantity),
                                     Price = item.Price,
                                     Total = item.Total,
                                     Costo = 0,
-
+                                    PrivateWorkOrderId = work.Id
                                 });
                             }
-
-                            follow.PrivateWorkOrders.Add(work);
-
                         }
 
+                        follow.PrivateSendTests.Add(sendTest);
                         _db.FollowsPrivates.Add(follow);
-
                     }
 
                     await _db.SaveChangesAsync();

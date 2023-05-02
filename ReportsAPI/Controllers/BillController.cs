@@ -79,7 +79,7 @@ namespace ReportsAPI.Controllers
 
         public IActionResult Index(int id)
         {
-            IEnumerable<vwBillProductsServices> array = _db.VwBillProductsServices.Where(x => x.Id == id);
+            IEnumerable<vwBillProductsServices> array = _db.VwBillProductsServices.Where(x => x.Id == id).ToArray();
             string str = "Servicios por consulta y examenes";
             Reports.Bill bill = new Reports.Bill()
             {

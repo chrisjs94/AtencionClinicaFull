@@ -123,39 +123,40 @@ namespace ReportsAPI.Controllers
             return (new PdfServices()).ExportPdf(xtraReport);
         }
 
-        public IActionResult PrivateTest(int id, int testId, string sizePage = "LETTER")
+        public IActionResult PrivateTest(int id, int testId = 0, string sizePage = "LETTER")
         {
             var queryable = (from x in _db.PrivateSendTests
-             join y in _db.PrivateServiceTestDetails on x.Id equals y.ServiceTestId
-             join z in _db.Services on y.ServiceId equals z.Id
-             join a in _db.ServiceTypes on z.TypeId equals a.Id
-             join b in _db.Doctors on x.DoctorId equals b.Id
-             join c in _db.FollowsPrivates on x.PrivateFollowId equals c.Id
-             join d in _db.Bills on c.BillId equals d.Id
-             join e in _db.PrivateCustomers on d.PrivateCustomerId equals e.Id
-             join f in _db.ServiceDetails on z.Id equals f.ServiceId
-             join g in _db.PrivateCustomerTypes on e.TypeId equals g.Id
-             where x.Id == id && z.Id == testId
-             select new VwTestsResults()
-             {
-                 Id = x.Id,
-                 Date = x.Date,
-                 CreateBy = x.CreateBy,
-                 Doctor = b.Name,
-                 Procedimiento = z.Name,
-                 Examen = f.Name,
-                 Result = y.Result,
-                 Reference = y.Reference,
-                 Um = y.Um,
-                 Inss = d.PrivateCustomerId,
-                 Paciente = string.Format("{0} {1}", e.FirstName, e.LastName),
-                 Relationship = g.Name,
-                 Edad = CalculateEdad(e.BirthDate),
-                 ServiceId = z.Id,
-                 ReportName = z.ReportName,
-                 Tipo = a.Name,
-                 BirthDate = e.BirthDate
-             });
+                             join i in _db.PrivateServiceTests on x.Id equals i.SendTestId
+                             join y in _db.PrivateServiceTestDetails on i.Id equals y.ServiceTestId
+                             join z in _db.Services on y.ServiceId equals z.Id
+                             join a in _db.ServiceTypes on z.TypeId equals a.Id
+                             join b in _db.Doctors on x.DoctorId equals b.Id
+                             join c in _db.FollowsPrivates on x.PrivateFollowId equals c.Id
+                             join d in _db.Bills on c.BillId equals d.Id
+                             join e in _db.PrivateCustomers on d.PrivateCustomerId equals e.Id
+                             join f in _db.ServiceDetails on z.Id equals f.ServiceId
+                             join g in _db.PrivateCustomerTypes on e.TypeId equals g.Id
+                             where i.Id == id
+                             select new VwTestsResults()
+                             {
+                                 Id = x.Id,
+                                 Date = x.Date,
+                                 CreateBy = x.CreateBy,
+                                 Doctor = b.Name,
+                                 Procedimiento = z.Name,
+                                 Examen = f.Name,
+                                 Result = y.Result,
+                                 Reference = y.Reference,
+                                 Um = y.Um,
+                                 Inss = d.PrivateCustomerId,
+                                 Paciente = string.Format("{0} {1}", e.FirstName, e.LastName),
+                                 Relationship = g.Name,
+                                 Edad = CalculateEdad(e.BirthDate),
+                                 ServiceId = z.Id,
+                                 ReportName = z.ReportName,
+                                 Tipo = a.Name,
+                                 BirthDate = e.BirthDate
+                             });
 
             return this.Print(this.GetFiltered(queryable, testId), sizePage);
         }
