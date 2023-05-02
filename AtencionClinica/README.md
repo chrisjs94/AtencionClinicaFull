@@ -57,3 +57,21 @@ Admin
 	NOTA: Para entrar al menu tenes que ser usuario del area de laboratorio. Una vez que entres ahi -> Menu Servicios Asegurados
 4. Crear impresión de voucher ademas de la de tamaño carta en los exámenes.
 	NOTA: Menu Servicios Privados -> Convenio
+
+
+
+
+
+Eliminar ingresos de clientes privados:
+delete from PrivateSendTestDetails
+delete from PrivateServiceTestBaarDetails
+delete from PrivateServiceTestDetails
+delete from PrivateServiceTests
+delete from PrivateSendTests
+delete from BillDetails
+delete from PrivateWorkOrderDetails
+delete from PrivateWorkOrders;
+delete from PrivateWorkPreOrderDetails
+delete from PrivateWorkPreOrders
+delete from FollowsPrivates
+delete from Bills
