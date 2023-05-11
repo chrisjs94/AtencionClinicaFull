@@ -196,7 +196,7 @@ namespace AtencionClinica.Controllers
                                 }
                                 else if (item.ServiceId == 8) //BAAR
                                 {
-                                    for (int i =1; i <= 3; i++)
+                                    for (int i = 1; i <= 3; i++)
                                     {
                                         serviceTest.PrivateServiceTestBaarDetails.Add(new PrivateServiceTestBaarDetail()
                                         {
@@ -211,23 +211,23 @@ namespace AtencionClinica.Controllers
                                 {
                                     var serviceDetails = _db.ServiceDetails.Where(x => x.ServiceId == item.ServiceId);
 
-                                    if (!serviceDetails.Any())
-                                        return BadRequest("El servicio no ha podido ser encontrado.");
-
-                                    foreach (var item2 in serviceDetails)
+                                    if (serviceDetails.Any())
                                     {
-                                        serviceTest.PrivateServiceTestDetails.Add(new PrivateServiceTestDetail()
+                                        foreach (var item2 in serviceDetails)
                                         {
-                                            ServiceTest = serviceTest,
-                                            ServiceId = (int)item.ServiceId,
-                                            ServiceDetailId = item2.Id,
-                                            Name = item2.Name,
-                                            Um = item2.Um,
-                                            Reference = item2.Reference,
-                                            Result = "",
-                                            ResultJson = "",
-                                            ServiceTestId = serviceTest.Id
-                                        });
+                                            serviceTest.PrivateServiceTestDetails.Add(new PrivateServiceTestDetail()
+                                            {
+                                                ServiceTest = serviceTest,
+                                                ServiceId = (int)item.ServiceId,
+                                                ServiceDetailId = item2.Id,
+                                                Name = item2.Name,
+                                                Um = item2.Um,
+                                                Reference = item2.Reference,
+                                                Result = "",
+                                                ResultJson = "",
+                                                ServiceTestId = serviceTest.Id
+                                            });
+                                        }
                                     }
                                 }
 
