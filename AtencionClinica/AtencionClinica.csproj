@@ -50,6 +50,194 @@
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="ClientApp\public\dx.generic.custom-scheme-origin.css" />
+    <None Remove="ClientApp\public\dx.generic.custom-scheme.css" />
+    <None Remove="ClientApp\public\favicon.ico" />
+    <None Remove="ClientApp\public\index.html" />
+    <None Remove="ClientApp\public\manifest.json" />
+    <None Remove="ClientApp\public\Original.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-down-12x7.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-down-7x5.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-down-9x6.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-left-6x9.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-left-7x11.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-left-8x13.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-right-6x9.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-right-7x11.svg" />
+    <None Remove="ClientApp\src\svg\arrow-rounded-right-8x13.svg" />
+    <None Remove="ClientApp\src\svg\cart-20.svg" />
+    <None Remove="ClientApp\src\svg\check-12x9.svg" />
+    <None Remove="ClientApp\src\svg\check-9x7.svg" />
+    <None Remove="ClientApp\src\svg\compare-16.svg" />
+    <None Remove="ClientApp\src\svg\cross-10.svg" />
+    <None Remove="ClientApp\src\svg\cross-12.svg" />
+    <None Remove="ClientApp\src\svg\cross-20.svg" />
+    <None Remove="ClientApp\src\svg\fi-24-hours-48.svg" />
+    <None Remove="ClientApp\src\svg\fi-free-delivery-48.svg" />
+    <None Remove="ClientApp\src\svg\fi-payment-security-48.svg" />
+    <None Remove="ClientApp\src\svg\fi-tag-48.svg" />
+    <None Remove="ClientApp\src\svg\filters-16.svg" />
+    <None Remove="ClientApp\src\svg\formatRates.png" />
+    <None Remove="ClientApp\src\svg\formatxlx.png" />
+    <None Remove="ClientApp\src\svg\heart-20.svg" />
+    <None Remove="ClientApp\src\svg\layout-grid-16x16.svg" />
+    <None Remove="ClientApp\src\svg\layout-grid-with-details-16x16.svg" />
+    <None Remove="ClientApp\src\svg\layout-list-16x16.svg" />
+    <None Remove="ClientApp\src\svg\logo-small.svg" />
+    <None Remove="ClientApp\src\svg\logo.png" />
+    <None Remove="ClientApp\src\svg\logo.svg" />
+    <None Remove="ClientApp\src\svg\logo2.png" />
+    <None Remove="ClientApp\src\svg\logoclinica.png" />
+    <None Remove="ClientApp\src\svg\logohome.png" />
+    <None Remove="ClientApp\src\svg\menu-18x14.svg" />
+    <None Remove="ClientApp\src\svg\producto-format.png" />
+    <None Remove="ClientApp\src\svg\quickview-16.svg" />
+    <None Remove="ClientApp\src\svg\rating-13x12.svg" />
+    <None Remove="ClientApp\src\svg\search-20.svg" />
+    <None Remove="ClientApp\src\svg\wishlist-16.svg" />
+    <None Remove="ClientApp\src\svg\working.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientApp\public\dx.generic.custom-scheme-origin.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\public\dx.generic.custom-scheme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\public\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\public\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\public\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\public\Original.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-down-12x7.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-down-7x5.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-down-9x6.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-left-6x9.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-left-7x11.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-left-8x13.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-right-6x9.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-right-7x11.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\arrow-rounded-right-8x13.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\cart-20.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\check-12x9.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\check-9x7.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\compare-16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\cross-10.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\cross-12.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\cross-20.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\fi-24-hours-48.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\fi-free-delivery-48.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\fi-payment-security-48.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\fi-tag-48.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\filters-16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\formatRates.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\formatxlx.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\heart-20.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\layout-grid-16x16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\layout-grid-with-details-16x16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\layout-list-16x16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logo-small.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logo2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logoclinica.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\logohome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\menu-18x14.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\producto-format.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\quickview-16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\rating-13x12.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\search-20.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\wishlist-16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientApp\src\svg\working.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

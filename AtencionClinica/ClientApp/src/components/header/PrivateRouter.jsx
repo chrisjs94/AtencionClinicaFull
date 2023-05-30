@@ -10,7 +10,7 @@ const PrivateRoute = routeProps => {
       return (<Route exact {...rest} render= { props => 
         userService.isLogged() 
           ? Component ? <Component {...props} /> : <Render {...props}/>
-          : <Redirect to={{pathname:'/account/login', state:{from: props.location}}} />
+          : <Redirect to={{pathname:'/flordesacuanjoche/account/login', state:{ from: props.location}}} />
       } />)
 };
 

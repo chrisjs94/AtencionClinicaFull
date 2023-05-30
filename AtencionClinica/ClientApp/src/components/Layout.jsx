@@ -15,7 +15,7 @@ import catalogos, { typeTraslate } from '../data/catalogos';
 import Catalogo from './shared/Catalogos';
 import { _path } from '../data/headerNavigation';
 import MobileHeader from './mobile/MobileHeader';
-import PrivateRoute from './header/PrivateRouter';
+import PrivateRoute from './header/PrivateRouter'; //Check if user is logged in
 import Percapita from '../views/percapita';
 import Admisiones from '../views/admision';
 import Nuevo from '../views/admision/Nuevo';

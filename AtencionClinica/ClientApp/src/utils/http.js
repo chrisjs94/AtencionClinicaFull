@@ -108,7 +108,7 @@ const processResponse = resp => {
             resp.text().then(err => reject('Error interno en la aplicacion'));
 
         if (resp.status == httpStatus.unauthorized) {
-            window.location.href = '/account/login';
+            window.location.href = '/flordesacuanjoche/account/login';
         }
 
         if (resp.status == httpStatus.ok) {
