@@ -1,17 +1,20 @@
 using System;
 using System.Globalization;
 using System.Text;
+using System.Threading;
 using AtencionClinica.Models;
 using AtencionClinica.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AtencionClinica
@@ -118,6 +121,18 @@ namespace AtencionClinica
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+            });
+
+            app.Use(async (context, next) =>
+            {
+                var appSettings = app.ApplicationServices.GetService<IOptions<AppSettings>>().Value;
+
+                var maxRequestBodySizeFeature = context.Features.Get<IHttpMaxRequestBodySizeFeature>();
+                maxRequestBodySizeFeature.MaxRequestBodySize = appSettings.MaxRequestLength;
+
+                context.RequestAborted = new CancellationTokenSource(TimeSpan.FromSeconds(appSettings.ExecutionTimeout)).Token;
+
+                await next();
             });
         }
     }
